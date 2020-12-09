@@ -1,0 +1,45 @@
+{
+    "name": "jkujawski/laravel-taxjar",
+    "description": "Laravel TaxJar Wrapper",
+    "keywords": [
+        "laravel",
+        "taxjar",
+        "tax",
+        "jar"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jakub Kujawski",
+            "email": "me@jakub.pro"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Jkujawski\\TaxJar\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jkujawski\\TaxJar\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "taxjar/taxjar-php": "^1.10"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jkujawski\\TaxJar\\TaxJarServiceProvider"
+            ],
+            "aliases": {
+                "TaxJar": "Jkujawski\\TaxJar\\Facades\\TaxJar"
+            }
+        }
+    }
+}
