@@ -20,8 +20,17 @@ class TaxJarServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/taxjar.php', 'taxjar');
 
-        $this->app->singleton('taxjar', function() {
-            return Client::withApiKey(config('taxjar.token'));
+        $this->app->singleton('taxjar', function($app) {
+            $token = $app->make('config')->get('taxjar.token');
+
+            return Client::withApiKey($token);
         });
+
+        $this->app->alias('taxjar', Client::class);
+    }
+
+    public function provides()
+    {
+        return ['taxjar', Client::class];
     }
 }

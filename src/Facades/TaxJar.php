@@ -10,4 +10,5 @@ class TaxJar extends Facade
     {
         return 'taxjar';
     }
+
 }

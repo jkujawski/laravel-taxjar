@@ -27,19 +27,19 @@
     },
     "minimum-stability": "stable",
     "require": {
-        "taxjar/taxjar-php": "^1.10"
+        "taxjar/taxjar-php": "^1.10",
+        "illuminate/support": "^5.2"
     },
     "require-dev": {
-        "orchestra/testbench": "~3.0"
+        "orchestra/testbench": "~3.0",
+        "phpunit/phpunit": "^8.5",
+        "graham-campbell/testbench": "^5.5"
     },
     "extra": {
         "laravel": {
             "providers": [
                 "Jkujawski\\TaxJar\\TaxJarServiceProvider"
-            ],
-            "aliases": {
-                "TaxJar": "Jkujawski\\TaxJar\\Facades\\TaxJar"
-            }
+            ]
         }
     }
 }
